@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PageHome from "./PageHome";
 import Page404 from "./Page404";
-import "./App.css";
 
 function App() {
   return (

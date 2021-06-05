@@ -1,0 +1,27 @@
+.WeatherBadge {
+  color: #333;
+}
+
+.WeatherBadge-Title {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.WeatherBadge-Content {
+  display: flex;
+  align-items: flex-end;
+}
+
+.WeatherBadge-Temperature {
+  font-weight: 100;
+  margin-left: 30px;
+}
+
+.WeatherBadge_size_m .WeatherBadge-Temperature {
+  font-size: 80px;
+}
+
+.WeatherBadge_size_s .WeatherBadge-Temperature {
+  font-size: 60px;
+}

@@ -1,0 +1,7 @@
+.Weather-Current + .Weather-Hourly {
+  margin-top: 30px;
+}
+
+.Weather-Hourly + .Weather-Hourly {
+  margin-top: 20px;
+}
