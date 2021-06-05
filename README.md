@@ -24,6 +24,6 @@ serve -s build
 
 4. Open the app in browser
 
-http://localhost:[port]/?api-key=[OpenWeather API key]
+http://localhost:[port]/weather-app/?api-key=[OpenWeather API key]
 
 The app requires an OpenWeather API key. You can get one [here](https://openweathermap.org/price).
