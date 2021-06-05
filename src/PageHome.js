@@ -6,15 +6,30 @@ function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
-function PageHome() {
+function useApiKey() {
   const query = useQuery();
-  const history = useHistory();
+  if (query.has("api-key")) {
+    const apiKey = query.get("api-key");
+    document.cookie = `api-key=${apiKey}`;
+    return apiKey;
+  } else {
+    const match = document.cookie.match(/\bapi-key=([0-9a-f]+)/);
+    return match?.[1] || undefined;
+  }
+}
 
-  const apiKey = query.get("api-key");
+function PageHome() {
+  const location = useLocation();
+  const query = useQuery();
+  const apiKey = useApiKey();
+  const history = useHistory();
 
   useEffect(() => {
     if (!apiKey) {
       history.replace("/not-found");
+    } else if (query.has("api-key")) {
+      query.delete("api-key");
+      history.replace(`${location.pathname}?${query.toString()}`);
     }
   }, [apiKey]);
 
