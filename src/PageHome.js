@@ -10,7 +10,7 @@ function useApiKey() {
   const query = useQuery();
   if (query.has("api-key")) {
     const apiKey = query.get("api-key");
-    document.cookie = `api-key=${apiKey}`;
+    document.cookie = `api-key=${apiKey}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
     return apiKey;
   } else {
     const match = document.cookie.match(/\bapi-key=([0-9a-f]+)/);
